@@ -1,0 +1,12 @@
+.log-in-form {
+    width: 100%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+
+        align-self: stretch;
+    }
+}

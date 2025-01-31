@@ -1,0 +1,39 @@
+.sign-up-form {
+    width: 100%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 36px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .title {
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: capitalize;
+        color: #000000;
+    }
+
+    .inputs {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 12px;
+
+        >* {
+            flex: 200px;
+            height: 48px;
+        }
+    }
+}

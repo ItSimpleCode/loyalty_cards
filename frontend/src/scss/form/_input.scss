@@ -1,0 +1,156 @@
+input:where([type='text'], [type='email'], [type='phone'], [type='password']) {
+    cursor: text !important;
+}
+
+input:where([type='redio'], [type='checkbox']) {
+    cursor: pointer;
+}
+
+label,
+button {
+    cursor: pointer;
+}
+
+.text-input,
+.email-input,
+.password-input,
+.phone-input {
+    background: #F2F2F2;
+
+    input {
+        font-family: inherit;
+        font-weight: 400;
+        font-size: 15px;
+        color: #000000;
+
+        width: 100%;
+        height: 48px;
+        padding: 16px;
+        border: 0.5px solid #E5E5E5;
+        border-radius: 6px;
+        outline: none;
+
+        &::placeholder {
+            color: #808080;
+        }
+    }
+}
+
+.password-input {
+    position: relative;
+
+    button {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.checkbox-input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+
+    label {
+        font-weight: 400;
+        font-size: 12px;
+        color: #1A1A1A;
+    }
+
+    input {
+        appearance: none;
+        position: relative;
+
+        background: #E5E5E5;
+        /* Grey background */
+        width: 40px;
+        height: 20px;
+        padding: 2px;
+        border: 0.5px solid #E5E5E5;
+        border-radius: 36.5px;
+        transition: background-color 0.3s ease;
+        /* Smooth transition for background */
+    }
+
+    input::before {
+        content: '';
+        display: block;
+        background: #fff;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 50%;
+        left: 2px;
+        transform: translate(0, -50%);
+        transition: left 0.3s ease;
+        /* Smooth transition for knob */
+    }
+
+    input:checked {
+        background: #0D6EFD;
+        /* Bootstrap blue background when checked */
+    }
+
+    input:checked::before {
+        left: calc(100% - 17px);
+        /* Move the knob to the right when checked */
+    }
+
+}
+
+.radio-group {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #F2F2F2;
+
+
+    .radio-button {
+        flex: 1;
+
+        label {
+            font-size: 15px;
+            text-transform: capitalize;
+            height: 100%;
+            border-radius: 4px;
+        }
+    }
+
+}
+
+.radio-button {
+    input {
+        display: none;
+
+        &:checked+label {
+            background-color: #ffffff;
+        }
+    }
+
+    label {
+        color: #808080;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: background 0.3s;
+    }
+
+    :not(.radio-group)>& {
+        input {
+            &:checked+label {
+                background-color: #F2F2F2;
+            }
+        }
+
+        label {
+            border: 2px solid #F2F2F2;
+        }
+    }
+}
